@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Day Coming Soon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Night Sky Elements -->
+    <div id="moon" class="sky-element moon"></div>
+    <div id="star-decor" class="sky-element star-shape">✦</div>
+
+    <!-- Interactive Start Framework -->
+    <div id="interactive-start">
+        <!-- Wrappers added for the exact heart planting transition -->
+        <div class="heart-container" id="heartContainer">
+            <div class="pulse-heart" id="clickableHeart"></div>
+        </div>
+        <div class="click-text" id="clickText">
+            Click Me:)<br>
+            YOUR DAY COMING SOON!
+        </div>
+    </div>
+
+    <!-- Main Dynamic Interface Layout Section -->
+    <div id="main-interface" class="interface-container">
+        <div class="content-split-grid">
+            
+            <!-- Left Half Area: Text Only -->
+            <div class="wishes-section">
+                <div class="wishes-block">
+                    <p>Hey you 🎈</p>
+                    <p>YOUR DAY COMING SOON 🍰</p>
+                    <p>May God bless you 🍀</p>
+                    <p>And give u many happiness 💕</p>
+                    <p>Just saying...</p>
+                    <p>you're pretty awesome 💖</p>
+                    <p>Sending good vibes ✨</p>
+                    <p>and maybe a wink 😉</p>
+                    <p>Hope u have a great day today 💝</p>
+                </div>
+                
+                <div class="signature-block">
+                    <p class="pink-text">ALL THE LOVE</p>
+                    <p class="pink-text">YOUR DAY</p>
+                    <p class="pink-text">COMING SOON</p>
+                </div>
+            </div>
+            
+            <!-- Right Half Area: Tree Canvas Layer Only -->
+            <div class="tree-canvas-container" id="canvasBox">
+                <canvas id="treeCanvas"></canvas>
+            </div>
+            
+        </div>
+
+        <!-- Lower Full Width Horizon Countdown Section -->
+        <div class="countdown-section">
+            <div class="countdown-title">THE WORLD JUST GOT LUCKIER SINCE</div>
+            <div class="countdown-display">
+                <div class="time-unit"><span class="lbl">DAYS</span><span id="days">0</span></div>
+                <div class="time-unit"><span class="lbl">HOURS</span><span id="hours">0</span></div>
+                <div class="time-unit"><span class="lbl">MINUTES</span><span id="minutes">0</span></div>
+                <div class="time-unit"><span class="lbl">SECONDS</span><span id="seconds" class="pink-seconds">0</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

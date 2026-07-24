@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(to bottom, #050714, #0b0e24);
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+}
+
+/* Sky Elements */
+.sky-element {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+.moon {
+    top: 40px;
+    right: 40px;
+    width: 85px;
+    height: 85px;
+    background: #fffdf0;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 10px rgba(255, 253, 240, 0.4);
+}
+.star-shape {
+    left: 10%;
+    top: 60%;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.3);
+}
+
+/* Click Me Framework */
+#interactive-start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    z-index: 20;
+    transition: opacity 0.5s ease;
+}
+.heart-container {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: inline-block;
+}
+.pulse-heart {
+    width: 40px;
+    height: 40px;
+    background-color: #ff758f;
+    transform: rotate(-45deg);
+    position: absolute;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+    top: 0;
+    left: 0;
+}
+.pulse-heart:before, .pulse-heart:after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background-color: #ff758f;
+    border-radius: 50%;
+    position: absolute;
+}
+.pulse-heart:before { top: -20px; left: 0; }
+.pulse-heart:after { top: 0; left: 20px; }
+
+@keyframes pulse {
+    0% { transform: scale(1) rotate(-45deg); }
+    50% { transform: scale(1.1) rotate(-45deg); }
+    100% { transform: scale(1) rotate(-45deg); }
+}
+
+/* UPGRADE: Real HTML Heart Planting Animation Path */
+.plant-animation {
+    animation: none !important; /* Stop pulsing */
+    transition: all 1.2s cubic-bezier(0.5, 0, 0.7, 1);
+    
+    /* Moves the exact clicked heart right into the canvas trunk base position */
+    left: calc(25vw - 20px) !important; 
+    top: calc(70vh * 0.95 - 100px) !important;
+    transform: scale(0.3) rotate(-45deg) !important;
+    opacity: 0;
+}
+
+.click-text {
+    margin-left: 30px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap;
+    transition: opacity 0.4s ease;
+}
+
+/* Main Container Frame UI */
+.interface-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px 24px;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Split Grid Layout */
+.content-split-grid {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    margin-top: 100px;
+}
+
+.wishes-section {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    padding-right: 10px;
+    z-index: 6;
+}
+.wishes-block p {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.88);
+    white-space: nowrap;
+}
+.signature-block {
+    margin-top: 20px;
+}
+.pink-text {
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    color: #ff758f;
+    text-transform: uppercase;
+}
+
+.tree-canvas-container {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    height: 100%;
+}
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Footer Section Displays */
+.countdown-section {
+    width: 100%;
+}
+.countdown-title {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.countdown-display {
+    display: flex;
+    justify-content: flex-start;
+    gap: 22px;
+}
+.time-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.time-unit span[id] {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.time-unit .lbl {
+    font-size: 0.62rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 6px;
+}
+.pink-seconds {
+    color: #ff758f;
+}
